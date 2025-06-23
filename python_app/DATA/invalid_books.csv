@@ -1,2 +1,4 @@
 Id,Books,Book checkout,Book Returned,Days allowed to borrow,Customer ID
 17.0,The Bloody Chamber,,04/06/2023,2 weeks,3.0
+3,The hobbit,2023-04-02,25/03/2023,2 weeks,4.0
+18,Dracula,2023-06-10,10/07/2023,2 weeks,10.0
