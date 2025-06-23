@@ -1,0 +1,26 @@
+#import the packages 
+import pandas as pd
+from ydata_profiling import ProfileReport
+#from IPython.display import display, Image
+
+#import os
+#os.chdir('C:\Users\[login]\Downloads')
+  
+# DataFrame - read the file 
+df = pd.read_csv(r"C:\Users\Admin\Desktop\QA_Module5_Training\python_app\DATA\Library Systembook.csv",quotechar='"')
+  
+#, encoding_errors = 'replace'
+
+# run the profile report 
+Report = ProfileReport(df, title='Pandas Profiling Report')
+Report.to_file('Pandas Profiling.html')
+
+
+# DataFrame - read the file 
+df = pd.read_csv(r"C:\Users\Admin\Desktop\QA_Module5_Training\python_app\DATA\Library SystemCustomers.csv")
+  
+#, encoding_errors = 'replace'
+
+# run the profile report 
+Report = ProfileReport(df, title='Pandas Profiling Report2')
+Report.to_file('Pandas Profiling2.html')
