@@ -1,0 +1,76 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0" version="27.1.6">
+  <diagram name="Page-1" id="74b105a0-9070-1c63-61bc-23e55f88626e">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1.5" pageWidth="1169" pageHeight="826" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" style=";html=1;" />
+        <mxCell id="1" style=";html=1;" parent="0" />
+        <mxCell id="10b056a9c633e61c-30" value="PROJECT BRIEF: 1.1 Library Quality Analysis" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="1">
+          <mxGeometry x="80" y="40" width="1590" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="rfI4PZfrP5wC4qp0OdTN-1" value="&lt;div&gt;SOURCE:&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;CSV File" style="shape=ext;double=1;rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="170" y="500" width="180" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="rfI4PZfrP5wC4qp0OdTN-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="rfI4PZfrP5wC4qp0OdTN-2" target="rfI4PZfrP5wC4qp0OdTN-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rfI4PZfrP5wC4qp0OdTN-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="rfI4PZfrP5wC4qp0OdTN-9" target="rfI4PZfrP5wC4qp0OdTN-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rfI4PZfrP5wC4qp0OdTN-9" value="&lt;div&gt;DESTINATION:&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;??" style="shape=ext;double=1;rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="965" y="505" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="rfI4PZfrP5wC4qp0OdTN-10" value="POWERBI Report&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Data Engineering Dashboard&lt;/div&gt;&lt;div&gt;Data Quality/Exceptions&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;sketch=1;" vertex="1" parent="1">
+          <mxGeometry x="1190" y="462.5" width="280" height="165" as="geometry" />
+        </mxCell>
+        <mxCell id="rfI4PZfrP5wC4qp0OdTN-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="rfI4PZfrP5wC4qp0OdTN-1" target="rfI4PZfrP5wC4qp0OdTN-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="480" y="540" as="targetPoint" />
+            <mxPoint x="350" y="540" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rfI4PZfrP5wC4qp0OdTN-2" value="ETL" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="450" width="340" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="rfI4PZfrP5wC4qp0OdTN-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="rfI4PZfrP5wC4qp0OdTN-2" source="rfI4PZfrP5wC4qp0OdTN-3" target="rfI4PZfrP5wC4qp0OdTN-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rfI4PZfrP5wC4qp0OdTN-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="rfI4PZfrP5wC4qp0OdTN-2" source="rfI4PZfrP5wC4qp0OdTN-3" target="rfI4PZfrP5wC4qp0OdTN-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rfI4PZfrP5wC4qp0OdTN-3" value="Python" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=-1;hachureGap=8;fillStyle=cross-hatch;sketch=1;" vertex="1" parent="rfI4PZfrP5wC4qp0OdTN-2">
+          <mxGeometry x="40" y="55" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rfI4PZfrP5wC4qp0OdTN-5" value="Failures" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=2;hachureGap=8;fillStyle=dots;sketch=1;" vertex="1" parent="rfI4PZfrP5wC4qp0OdTN-2">
+          <mxGeometry x="40" y="190" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rfI4PZfrP5wC4qp0OdTN-7" value="Success" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=2;hachureGap=8;fillStyle=dots;sketch=1;" vertex="1" parent="rfI4PZfrP5wC4qp0OdTN-2">
+          <mxGeometry x="200" y="55" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rfI4PZfrP5wC4qp0OdTN-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="rfI4PZfrP5wC4qp0OdTN-15" target="rfI4PZfrP5wC4qp0OdTN-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rfI4PZfrP5wC4qp0OdTN-15" value="Develop:&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Python Pipeline&lt;/div&gt;&lt;div&gt;GitHub Repo&lt;/div&gt;&lt;div&gt;PowerBI Report&lt;/div&gt;&lt;div&gt;CI/CD to include Automated Testing&lt;/div&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="110" width="350" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="rfI4PZfrP5wC4qp0OdTN-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="rfI4PZfrP5wC4qp0OdTN-16" target="rfI4PZfrP5wC4qp0OdTN-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rfI4PZfrP5wC4qp0OdTN-16" value="Test:&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Python UnitTest&lt;/div&gt;&lt;div&gt;Stakeholder UAT&lt;/div&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="110" width="350" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="rfI4PZfrP5wC4qp0OdTN-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="rfI4PZfrP5wC4qp0OdTN-17" target="rfI4PZfrP5wC4qp0OdTN-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rfI4PZfrP5wC4qp0OdTN-17" value="Deploy:&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Pipeline and Power BI Report.&lt;/div&gt;&lt;div&gt;GitHub Repo Main Branch&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="850" y="110" width="350" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="rfI4PZfrP5wC4qp0OdTN-18" value="Demo/Sign-off&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;prior to going to Production/Go Live.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Comms to users&lt;/div&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1240" y="110" width="350" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="RoL4DpjTfsWkVui6Eeeq-4" value="&#xa;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(236, 236, 236); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;&quot;&gt;CI/CD Pipeline (inc. GitHub and Automated Testing)&lt;/span&gt;&#xa;&#xa;" style="shape=singleArrow;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="730" width="960" height="322.5" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
