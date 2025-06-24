@@ -41,6 +41,12 @@ errors_customer = missing_customer[['Books', 'Book checkout', 'Book Returned', '
 #print(errors_customer.to_string())
 
 
+def enrich_dateDuration():
+    new_df['LoadDurationDays'] = (new_df['Book Returned']-new_df['Book checkout']).dt.days
+    return new_df
+  
+new_df = enrich_dateDuration()
+
 # Export to CSV
 new_df.to_csv(r'C:\Users\Admin\Desktop\QA_Module5_Training\python_app\DATA\cleaned_books.csv', index=False)  # Set index=False to exclude the index column
 
