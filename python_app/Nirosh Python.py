@@ -49,7 +49,7 @@ def enrich_dateDuration(colA, colB, df):
     Note:
     colB>colA
     """
-    df['date_delta'] = (df[colB]-df[colA]).dt.days
+    df['date_delta'] = (df[colA]-df[colB]).dt.days
 
     #Conditional Filtering to be able to gauge eroneous loans.
     df.loc[df['date_delta'] < 0, 'valid_loan_flag'] = False
@@ -96,7 +96,7 @@ if __name__ == '__main__':
     # Enriching the dataset
     data = enrich_dateDuration(df=data, colA='Book Returned', colB='Book checkout')
 
-    #data.to_csv('cleaned_file.csv')
+    data.to_csv('cleaned_books.csv')
     print(data)
 
     #Cleaning the customer file
@@ -107,7 +107,9 @@ if __name__ == '__main__':
     # Drop duplicates & NAs
     data2 = duplicateCleaner(data2)
     data2 = naCleaner(data2)
-
+    
+    
+    data.to_csv('cleaned_customers.csv')
     print(data2)
     print('**************** DATA CLEANING FINISHED ****************')
 
