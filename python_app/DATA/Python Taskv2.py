@@ -1,4 +1,5 @@
 import pandas as pd
+from csv import writer
 
 # Data engineering metrics (instantiation)
 #dropCount= 0
@@ -63,10 +64,14 @@ new_book_df.to_csv(r'C:\Users\Admin\Desktop\QA_Module5_Training\python_app\DATA\
 errors_df = book_df[book_df['Book checkout'].isna()]
 errors_df.to_csv(r'C:\Users\Admin\Desktop\QA_Module5_Training\python_app\DATA\invalid_books.csv', index=False)  # Set index=False to exclude the index column
 
-with open(r'C:\Users\Admin\Desktop\QA_Module5_Training\python_app\DATA\invalid_books.csv', 'a', newline='', encoding='utf-8') as f:
-    errors_customer.to_csv(f, header=f.tell()==0)
+#with open(r'C:\Users\Admin\Desktop\QA_Module5_Training\python_app\DATA\invalid_books.csv', 'a', newline='', encoding='utf-8') as f:
+#    errors_customer.to_csv(f, header=f.tell()==0)
 
-#errors_customer.to_csv(r'C:\Users\Admin\Desktop\QA_Module5_Training\python_app\DATA\invalid_books.csv', 'a', index=False) #, encoding='utf-8'
+#with open(r'C:\Users\Admin\Desktop\QA_Module5_Training\python_app\DATA\invalid_books.csv', 'a', newline='') as f:
+ #   writer_obj = writer(f)
+ #   writer_obj.writerow(errors_customer)
+
+#errors_customer.to_csv(r'cdC:\Users\Admin\Desktop\QA_Module5_Training\python_app\DATA\invalid_books.csv', 'a', index=False) #, encoding='utf-8'
 
 # drops empty cells
 new_customer_df = customerid_df.dropna()
