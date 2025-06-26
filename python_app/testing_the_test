@@ -1,0 +1,21 @@
+import pandas as pd
+import unittest
+from python_app import enrich_dateDuration
+ 
+ 
+# Creating a test dataframe
+test_df = pd.DataFrame({
+    'Book checkout': ['1/01/2025', '2/01/2025', '3/01/2025'],
+    'Book returned': ['1/02/2025', '2/02/2025', '3/02/2025']
+    # 'ExpectedValue': [31,31,31]
+    })
+
+ # Convert the columns to datetime 
+test_df['Book checkout'] = pd.to_datetime(test_df['Book checkout'], format = '%d/%m/%Y')
+test_df['Book returned'] = pd.to_datetime(test_df['Book returned'], format = '%d/%m/%Y')
+ #test_df['ExpectedValue'] = int(self.test_df['ExpectedValue'])
+            
+# Apply the enrichment function
+enriched_df = enrich_dateDuration(df=test_df, colA='Book returned', colB='Book checkout') 
+
+print(enriched_df)

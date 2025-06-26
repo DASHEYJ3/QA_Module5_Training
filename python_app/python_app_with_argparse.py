@@ -1,7 +1,7 @@
 import pandas as pd
 from sqlalchemy import create_engine
 import pyodbc
-#import argparse
+import argparse
 #import sqlite3
 
 # Function to output dataframe that can be manipulated via a filepath
@@ -74,6 +74,19 @@ def writeToSQL(df, table_name, server, database):
         print(f"Table{table_name} written to SQL")
     except Exception as e:
         print(f"Error writing to the SQL Server: {e}")
+        
+        
+        
+ # Main function
+def runSQL(df, table_name, server, database):
+    parser = argparse.ArgumentParser(description="Switch SQL functions on and off.")
+    parser.add_argument("--write", action="store_true", help="Write to SQL")
+    args = parser.parse_args()
+ 
+    # Execute functions based on arguments
+    if args.write:
+        writeToSQL(df, table_name, server, database)
+      
 
 if __name__ == '__main__':
     print('**************** Starting Clean ****************')
@@ -115,16 +128,16 @@ if __name__ == '__main__':
     print(data2)
     print('**************** DATA CLEANING FINISHED ****************')
 
-    print('Writing to SQL Server ...')
+    print('Writing to SQL Server only if --write entered...')
 
-    writeToSQL(
+    runSQL(
         data, 
         table_name='loans_bronze', 
         server = 'localhost', 
         database = 'DE5_Module5' 
     )
 
-    writeToSQL(
+    runSQL(
         data2, 
         table_name='customer_bronze', 
         server = 'localhost', 
