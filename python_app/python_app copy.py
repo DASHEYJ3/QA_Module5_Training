@@ -74,6 +74,24 @@ def writeToSQL(df, table_name, server, database):
         print(f"Table{table_name} written to SQL")
     except Exception as e:
         print(f"Error writing to the SQL Server: {e}")
+        
+def appendToSQL(df, table_name, server, database): #ideally would add argparse to the above
+
+    # Create the connection string with Windows Authentication
+    connection_string = f'mssql+pyodbc://@{server}/{database}?trusted_connection=yes&driver=ODBC+Driver+17+for+SQL+Server'
+
+    # Create the SQLAlchemy engine
+    engine = create_engine(connection_string)
+
+    try:
+        # Write the DataFrame to SQL Server
+        df.to_sql(table_name, con=engine, if_exists='append', index=False)
+
+        print(f"Table{table_name} written to SQL")
+    except Exception as e:
+        print(f"Error writing to the SQL Server: {e}")        
+        
+        
 
 if __name__ == '__main__':
     print('**************** Starting Clean ****************')
@@ -165,7 +183,7 @@ if __name__ == '__main__':
         database = 'DE5_Module5'
     )
    
-    writeToSQL(
+    appendToSQL(
         result, 
         table_name='ProcessLog', 
         server = 'localhost', 
