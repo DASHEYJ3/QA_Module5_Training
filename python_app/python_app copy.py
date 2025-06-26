@@ -19,7 +19,7 @@ def naCleaner(df):
 
 # Turning date columns into datetime
 def dateCleaner(col, df):
-    #date_errors = pd.DataFrame(columns=df.columns)  # Store rows with date errors
+    date_errors = pd.DataFrame(columns=df.columns)  # Store rows with date errors
 
     # Strip any quotes from dates
     df[col] = df[col].str.replace('"', "", regex=True)
@@ -34,7 +34,7 @@ def dateCleaner(col, df):
     error_flag = pd.to_datetime(df[col], dayfirst=True, errors='coerce').isna()
         
     # Move invalid rows to date_errors - Future feature
-    #date_errors = df[error_flag]
+    date_errors = df[error_flag]
         
     # Keep only valid rows in df
     df = df[~error_flag].copy()
@@ -79,14 +79,20 @@ if __name__ == '__main__':
     print('**************** Starting Clean ****************')
 
     # Instantiation
-    #dropCount= 0
-    #customer_drop_count = 0
+    dropCount= 0
+    customer_drop_count = 0
     filepath_input = './data/03_Library Systembook.csv'
     date_columns = ['Book checkout', 'Book Returned']
     date_errors = None
+    today_date_time = pd.to_datetime('today')
+    today_date = today_date_time.date()
+
+    print(today_date)
 
     data = fileLoader(filepath=filepath_input)
+    count_row = data.shape[0]     
 
+    
     # Drop duplicates & NAs
     data = duplicateCleaner(data)
     data = naCleaner(data)
@@ -100,19 +106,47 @@ if __name__ == '__main__':
 
     data.to_csv('./data/cleaned_books.csv')
     print(data)
-
+    count_row2 = data.shape[0]     
+    
+    ProcessLog = {
+        'DateTimeProcessed': today_date_time,
+        'DateProcessed': today_date,
+        'SourceCSV': filepath_input, 
+        'SourceRecordCount': count_row,
+        'LoadedRecordCount': count_row2        
+        }
+    print(ProcessLog)  
+   
     #Cleaning the customer file
     filepath_input_2 = './data/03_Library SystemCustomers.csv'
 
     data2 = fileLoader(filepath=filepath_input_2)
-
+ 
+    count_row = data2.shape[0]     
+ 
     # Drop duplicates & NAs
     data2 = duplicateCleaner(data2)
     data2 = naCleaner(data2)
     
-    
     data2.to_csv('./data/cleaned_customers.csv')
     print(data2)
+    count_row2 = data2.shape[0]     
+    
+    ProcessLog2 = {
+        'DateTimeProcessed': today_date_time,
+        'DateProcessed': today_date,
+        'SourceCSV': filepath_input_2, 
+        'SourceRecordCount': count_row,
+        'LoadedRecordCount': count_row2        
+        }
+  
+    pl1 = pd.DataFrame(ProcessLog, index=[0])
+    pl2 = pd.DataFrame(ProcessLog2, index=[0])
+    print(ProcessLog2)  
+    
+    result = pd.concat([pl1, pl2], axis=0)
+    print(result)
+    
     print('**************** DATA CLEANING FINISHED ****************')
 
     print('Writing to SQL Server ...')
@@ -131,5 +165,11 @@ if __name__ == '__main__':
         database = 'DE5_Module5'
     )
    
+    writeToSQL(
+        result, 
+        table_name='ProcessLog', 
+        server = 'localhost', 
+        database = 'DE5_Module5' 
+    )
  
     print('**************** The End ****************')
