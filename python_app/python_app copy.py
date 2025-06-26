@@ -1,6 +1,6 @@
 import pandas as pd
 from sqlalchemy import create_engine
-#import pyodbc
+import pyodbc
 #import argparse
 #import sqlite3
 
@@ -59,7 +59,7 @@ def enrich_dateDuration(colA, colB, df):
 
     return df
 
-"""def writeToSQL(df, table_name, server, database):
+def writeToSQL(df, table_name, server, database):
 
     # Create the connection string with Windows Authentication
     connection_string = f'mssql+pyodbc://@{server}/{database}?trusted_connection=yes&driver=ODBC+Driver+17+for+SQL+Server'
@@ -74,7 +74,7 @@ def enrich_dateDuration(colA, colB, df):
         print(f"Table{table_name} written to SQL")
     except Exception as e:
         print(f"Error writing to the SQL Server: {e}")
-"""
+
 if __name__ == '__main__':
     print('**************** Starting Clean ****************')
 
@@ -115,7 +115,7 @@ if __name__ == '__main__':
     print(data2)
     print('**************** DATA CLEANING FINISHED ****************')
 
-    """print('Writing to SQL Server ...')
+    print('Writing to SQL Server ...')
 
     writeToSQL(
         data, 
@@ -129,6 +129,7 @@ if __name__ == '__main__':
         table_name='customer_bronze', 
         server = 'localhost', 
         database = 'DE5_Module5'
-    )"""
+    )
+   
  
     print('**************** The End ****************')
